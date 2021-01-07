@@ -1,0 +1,23 @@
+<body style="max-width:1024px;width:1024px;"> 
+<div class="title"></div>
+<div class="main"></div>
+<div class="timeoutLegenda" style="display:none;"></div>
+<div class="styleSheets" style="display:none;"></div>
+<div class="other" style="display:none;"></div>
+<!--
+<p>Credit: <a href="https://observablehq.com/@esperanc/coral-vivo-diorama-v2">Coral Vivo Diorama v2 by Claudio Esperança</a></p>
+-->
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@esperanc/coral-vivo-diorama-v2.js?v=3";
+(new Runtime).module(define, name => {
+  if (name === "title") return Inspector.into(".title")();
+  if (name === "main") return Inspector.into(".main")();
+  if (name === "timeoutLegenda") return Inspector.into(".timeoutLegenda")();
+  if (name === "styleSheets") return Inspector.into(".styleSheets")();
+  if (["FontAwesome"].includes(name)) return Inspector.into(".other")();
+  return ["popups","popupCallback","zoomControl","cardInfo","cardPanelAdd","setMainDisplay","imgDb","card","speciesInfo","getImageEntry","converteLegenda","dataSum","speciesTable","whitenedCoralMat","getBranqueamento","d3PlotEspecieIndicador","popTableCSV","transparentPixel","layout","popData","s","chart","draw3D","populationCallback"].includes(name) || null;
+});
+</script>
+</body>
