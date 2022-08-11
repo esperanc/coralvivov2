@@ -1,23 +1,27 @@
-<body style="max-width:1024px;width:1024px;"> 
-<div class="title"></div>
-<div class="main"></div>
-<div class="timeoutLegenda" style="display:none;"></div>
-<div class="styleSheets" style="display:none;"></div>
-<div class="other" style="display:none;"></div>
-<!--
-<p>Credit: <a href="https://observablehq.com/@esperanc/coral-vivo-diorama-v2">Coral Vivo Diorama v2 by Claudio Esperança</a></p>
+<body style="margin:0px;">
+<style>
+.hide {
+   display: none;
+}
+</style>
+<div id="observablehq-main-4ac1f751"></div>
+<div class=hide>
+<div id="observablehq-styles-4ac1f751"></div>
+<div id="observablehq-FontAwesome-4ac1f751"></div>
+<div id="observablehq-styles2-4ac1f751"></div>
+</div>
+<!--<p>Credit: <a href="https://observablehq.com/@esperanc/coral-vivo-diorama-v3">Coral Vivo Diorama v3 by Claudio Esperança</a></p>
 -->
-
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@esperanc/coral-vivo-diorama-v2.js?v=3";
-(new Runtime).module(define, name => {
-  if (name === "title") return Inspector.into(".title")();
-  if (name === "main") return Inspector.into(".main")();
-  if (name === "timeoutLegenda") return Inspector.into(".timeoutLegenda")();
-  if (name === "styleSheets") return Inspector.into(".styleSheets")();
-  if (["FontAwesome"].includes(name)) return Inspector.into(".other")();
-  return ["popups","popupCallback","zoomControl","cardInfo","cardPanelAdd","setMainDisplay","imgDb","card","speciesInfo","getImageEntry","converteLegenda","dataSum","speciesTable","whitenedCoralMat","getBranqueamento","d3PlotEspecieIndicador","popTableCSV","transparentPixel","layout","popData","s","chart","draw3D","populationCallback"].includes(name) || null;
+import define from "https://api.observablehq.com/@esperanc/coral-vivo-diorama-v3.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "main") return new Inspector(document.querySelector("#observablehq-main-4ac1f751"));
+  if (name === "styles") return new Inspector(document.querySelector("#observablehq-styles-4ac1f751"));
+  if (name === "FontAwesome") return new Inspector(document.querySelector("#observablehq-FontAwesome-4ac1f751"));
+  if (name === "styles2") return new Inspector(document.querySelector("#observablehq-styles2-4ac1f751"));
+  return ["zoomControl","cardInfo","card","cardPanelAdd","popups","popupCallback","setMainDisplay","imgDb","speciesInfo","converteLegenda","converteLegendaCallback","s","dataSum","speciesTable","whitenedCoralMat","getBranqueamento","d3PlotEspecieIndicador","chart","speciesName","peixesData","popTableCSV","popData","layout","populationCallback","coraisData","getImageEntry","transparentPixel","draw3D"].includes(name);
 });
 </script>
 </body>
+
